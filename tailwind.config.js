@@ -25,6 +25,10 @@ export default {
       '3xl': ['2.25rem', '2.75rem'],
       '4xl': ['3.5rem', '4.25rem'],
     },
+    fontFamily: {
+      sans: 'Public Sans, sans-serif',
+      lexend: 'Lexend, sistem-ui',
+    },
   },
   plugins: [],
 }
