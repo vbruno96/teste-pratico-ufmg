@@ -29,6 +29,9 @@ export default {
       sans: 'Public Sans, sans-serif',
       lexend: 'Lexend, sistem-ui',
     },
+    backgroundImage: {
+      hero: 'url("/banner.png")',
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }
