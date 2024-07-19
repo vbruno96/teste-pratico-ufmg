@@ -29,7 +29,7 @@ export function AccordionFaq() {
       </Accordion.Root>
       <button
         type="button"
-        className="mx-auto my-5 block w-full max-w-[13.1875rem] rounded bg-primary px-5 py-2.5 text-center text-neutral-50"
+        className="mx-auto my-5 block w-full max-w-40 rounded bg-primary px-5 py-2.5 text-center text-sm text-neutral-50 md:max-w-[13.1875rem] md:text-base"
       >
         Ver mais
       </button>
@@ -58,12 +58,12 @@ const AccordionTrigger = React.forwardRef<
 >(function AccordionTrigger({ children, ...props }, forwardedRef) {
   return (
     <Accordion.Trigger
-      className="flex w-full items-center justify-between rounded-md border border-neutral-100 p-4 font-lexend font-bold transition-colors duration-300 group-data-[state='open']:rounded-bl-none group-data-[state='open']:rounded-br-none group-data-[state='open']:border-primary group-data-[state='open']:bg-primary group-data-[state='open']:text-neutral-50"
+      className="flex min-h-[5.125rem] w-full items-center justify-between rounded-md border border-neutral-100 p-4 text-left font-lexend text-sm font-bold transition-colors duration-300 group-data-[state='open']:rounded-bl-none group-data-[state='open']:rounded-br-none group-data-[state='open']:border-primary group-data-[state='open']:bg-primary group-data-[state='open']:text-neutral-50 sm:min-h-0 md:text-base"
       {...props}
       ref={forwardedRef}
     >
       {children}
-      <FaChevronDown className="size-4 transition-transform duration-300 group-data-[state='open']:rotate-180" />
+      <FaChevronDown className="size-4 shrink-0 transition-transform duration-300 group-data-[state='open']:rotate-180" />
     </Accordion.Trigger>
   )
 })
@@ -74,7 +74,7 @@ const AccordionContent = React.forwardRef<
 >(function AccordionContent({ children, ...props }, forwardedRef) {
   return (
     <Accordion.Content
-      className="rounded-bl-md rounded-br-md px-5 pb-6 pt-5"
+      className="rounded-bl-md rounded-br-md px-5 pb-6 pt-5 text-sm md:text-base"
       {...props}
       ref={forwardedRef}
     >

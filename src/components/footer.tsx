@@ -17,53 +17,53 @@ export function Footer() {
             </h5>
             <div className="space-y-5">
               <div className="space-y-1.5">
-                <label htmlFor="name" className="block">
+                <label htmlFor="name" className="block text-sm md:text-base">
                   Nome
                 </label>
                 <input
                   type="text"
                   id="name"
-                  className="w-full rounded-md border border-neutral-100 px-5 py-2.5 shadow-default placeholder:text-neutral-700"
+                  className="w-full rounded-md border border-neutral-100 px-5 py-2.5 text-sm shadow-default placeholder:text-neutral-700 md:text-base"
                   placeholder="Digite seu nome"
                   required
                 />
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="name" className="block">
+                <label htmlFor="name" className="block text-sm md:text-base">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
-                  className="w-full rounded-md border border-neutral-100 px-5 py-2.5 shadow-default placeholder:text-neutral-700"
+                  className="w-full rounded-md border border-neutral-100 px-5 py-2.5 text-sm shadow-default placeholder:text-neutral-700 md:text-base"
                   placeholder="Digite o seu email"
                   required
                 />
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="subject" className="block">
+                <label htmlFor="subject" className="block text-sm md:text-base">
                   Assunto
                 </label>
                 <input
                   type="text"
                   id="subject"
-                  className="w-full rounded-md border border-neutral-100 px-5 py-2.5 shadow-default placeholder:text-neutral-700"
+                  className="w-full rounded-md border border-neutral-100 px-5 py-2.5 text-sm shadow-default placeholder:text-neutral-700 md:text-base"
                   required
                 />
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="message" className="block">
+                <label htmlFor="message" className="block text-sm md:text-base">
                   Mensagem
                 </label>
                 <textarea
                   id="message"
-                  className="h-[9.5rem] w-full resize-none rounded-md border border-neutral-100 px-5 py-2.5 shadow-default placeholder:text-neutral-700"
+                  className="h-[9.5rem] w-full resize-none rounded-md border border-neutral-100 px-5 py-2.5 text-sm shadow-default placeholder:text-neutral-700 md:text-base"
                   required
                 />
               </div>
               <button
                 type="submit"
-                className="w-full rounded-md bg-primary px-5 py-2.5 text-white"
+                className="w-full rounded-md bg-primary px-5 py-2.5 text-sm text-white md:text-base"
               >
                 Enviar
               </button>
@@ -75,45 +75,45 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaInstagram className="size-[1.875rem]" />
+              <FaInstagram className="size-6 md:size-[1.875rem]" />
             </a>
             <a
               href="https://tiktok.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaTiktok className="size-[1.875rem]" />
+              <FaTiktok className="size-6 md:size-[1.875rem]" />
             </a>
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaFacebook className="size-[1.875rem]" />
+              <FaFacebook className="size-6 md:size-[1.875rem]" />
             </a>
             <a
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin className="size-[1.875rem]" />
+              <FaLinkedin className="size-6 md:size-[1.875rem]" />
             </a>
             <a
               href="https://whatsapp.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaWhatsapp className="size-[1.875rem]" />
+              <FaWhatsapp className="size-6 md:size-[1.875rem]" />
             </a>
           </div>
-          <div className="mx-auto max-w-[26rem] space-y-5 pb-[5.75rem] text-center">
+          <div className="mx-auto max-w-[26rem] space-y-5 text-center text-sm md:pb-[5.75rem] md:text-base">
             <h5 className="font-bold">Título Evento</h5>
             <span className="block">
               Universidade Federal de Minas Gerais <br />
               Av. Antônio Carlos, 6627, Pampulha | Belo Horizonte | MG | CEP:
               31270-901
             </span>
-            <span className="block text-sm underline">
+            <span className="block text-xs underline md:text-sm">
               Desenvolvido no Cedecom UFMG
             </span>
           </div>

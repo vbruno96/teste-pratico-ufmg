@@ -15,12 +15,12 @@ export function App() {
       <Hero>Semana do Fim de Semana 2024</Hero>
       <Header />
       <main className="text-neutral-700">
-        <div className="max-w-[1440px] space-y-20 px-64 py-5 pb-20 pt-16 2xl:mx-auto">
+        <div className="max-w-[1440px] space-y-14 px-5 py-5 pb-20 pt-10 md:space-y-20 md:px-10 md:pt-16 xl:px-64 2xl:mx-auto">
           <div className="space-y-5">
-            <h2 className="text-center font-lexend text-3xl font-semibold">
+            <h2 className="text-center font-lexend text-xl font-semibold md:text-3xl">
               Semana de Saúde Mental
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-4 text-sm md:text-base">
               <p>
                 “Acolher é reconhecer o que o outro traz como legítima e
                 singular necessidade de saúde”. (MS, 2013)
@@ -42,7 +42,7 @@ export function App() {
             </div>
             <button
               type="button"
-              className="mx-auto block w-full max-w-[13.4375rem] rounded bg-primary px-5 py-2.5 text-center text-sm font-semibold text-neutral-50"
+              className="mx-auto block w-full max-w-40 rounded bg-primary px-5 py-2.5 text-center text-xs font-semibold text-neutral-50 md:max-w-[13.4375rem] md:text-sm"
             >
               Inscreva-se
             </button>

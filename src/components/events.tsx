@@ -49,17 +49,19 @@ export function Events() {
   }, [])
 
   return (
-    <div className="space-y-5 px-2.5 pb-10">
-      <h2 className="text-center font-lexend text-3xl font-semibold">
+    <div className="space-y-5 px-2.5 md:pb-10">
+      <h2 className="text-center font-lexend text-xl font-semibold md:text-3xl">
         Programação
       </h2>
       <div className="space-y-5">
-        <span className="font-lexend font-bold text-neutral-700">Filtros</span>
+        <span className="font-lexend text-sm font-bold text-neutral-700 md:text-base">
+          Filtros
+        </span>
         <form onSubmit={handleFilterEvents} className="space-y-5">
-          <div className="flex items-center gap-5">
+          <div className="flex flex-wrap items-center gap-5">
             <select
               name="eventType"
-              className="grow rounded-md border border-neutral-100 bg-white px-4 py-2 text-neutral-700 shadow-default"
+              className="grow rounded-md border border-neutral-100 bg-white px-4 py-2 text-sm text-neutral-700 shadow-default md:text-base"
             >
               <option value="">Tipos de evento</option>
               <option value="Roda de conversa">Roda de conversa</option>
@@ -69,29 +71,31 @@ export function Events() {
             <input
               type="date"
               name="eventDate"
-              className="grow rounded-md border border-neutral-100 bg-white px-4 py-2 text-neutral-700 shadow-default"
+              className="grow rounded-md border border-neutral-100 bg-white px-4 py-2 text-sm text-neutral-700 shadow-default md:text-base"
             />
           </div>
           <button
             type="submit"
-            className="ml-auto block rounded border-neutral-700 bg-neutral-100 px-5 py-2 text-sm font-semibold ring-[0.2px] ring-neutral-700"
+            className="ml-auto block rounded border-neutral-700 bg-neutral-100 px-5 py-2 text-xs font-semibold ring-[0.2px] ring-neutral-700 md:text-sm"
           >
             Filtrar
           </button>
         </form>
 
-        <div className="flex items-start gap-5">
+        <div className="flex flex-wrap items-start gap-5">
           {filteredEvents.map((event) => (
             <ExpandableEvent key={event.id} event={event} />
           ))}
         </div>
 
-        <button
-          type="button"
-          className="mx-auto my-5 block w-full max-w-[13.1875rem] rounded bg-primary px-5 py-2.5 text-center text-neutral-50"
-        >
-          Ver mais
-        </button>
+        <div className="pt-5">
+          <button
+            type="button"
+            className="mx-auto my-5 block w-full max-w-40 rounded bg-primary px-5 py-2.5 text-center text-sm text-neutral-50 md:max-w-[13.1875rem] md:text-base"
+          >
+            Ver mais
+          </button>
+        </div>
       </div>
     </div>
   )

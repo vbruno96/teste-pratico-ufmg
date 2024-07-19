@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { FaMapMarkerAlt, FaMinus, FaPlus } from 'react-icons/fa'
 import { IoShareSocial } from 'react-icons/io5'
 
-import { Event } from '../App'
+import { Event } from './events'
 
 interface ExpandableEventProps {
   event: Event
@@ -66,7 +66,7 @@ export function ExpandableEvent({ event }: ExpandableEventProps) {
         <Collapsible.Trigger asChild>
           <button
             type="button"
-            className="flex items-center gap-1.5 rounded bg-primary px-5 py-2.5 text-sm font-semibold text-neutral-50"
+            className="flex items-center gap-1.5 rounded bg-primary px-5 py-2.5 text-xs font-semibold text-neutral-50 md:text-sm"
           >
             {!isExpanded ? (
               <>
