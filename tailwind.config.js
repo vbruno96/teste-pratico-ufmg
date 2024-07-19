@@ -2,6 +2,22 @@
 export default {
   content: ['./index.html', './src/**/*.tsx'],
   theme: {
+    extend: {
+      animation: {
+        'slide-down': 'slideDown 300ms ease-out',
+        'slide-up': 'slideUp 300ms ease-out',
+      },
+      keyframes: {
+        slideDown: {
+          '0%': { height: '0' },
+          '100%': { height: 'var(--radix-collapsible-content-height)' },
+        },
+        slideUp: {
+          '0%': { height: 'var(--radix-collapsible-content-height)' },
+          '100%': { height: '0' },
+        },
+      },
+    },
     colors: {
       transparent: 'transparent',
       primary: '#1F3748',
