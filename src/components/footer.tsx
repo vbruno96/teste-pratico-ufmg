@@ -1,3 +1,5 @@
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
 import {
   FaFacebook,
   FaInstagram,
@@ -5,61 +7,106 @@ import {
   FaTiktok,
   FaWhatsapp,
 } from 'react-icons/fa6'
+import { z } from 'zod'
+
+const contactFormSchema = z.object({
+  name: z.string().min(1, 'Campo Nome é obrigatório'),
+  email: z.string().email('Digite um email válido'),
+  subject: z.string().min(1, 'Campo Assunto é obrigatório'),
+  message: z.string().min(1, 'Campo Mensagem é obrigatório'),
+})
+
+type ContactFormSchema = z.infer<typeof contactFormSchema>
 
 export function Footer() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactFormSchema>({
+    resolver: zodResolver(contactFormSchema),
+  })
+
+  function handleContactForm(data: ContactFormSchema) {
+    console.log(data)
+  }
+
   return (
     <footer className="bg-neutral-100 text-neutral-700">
       <div className="max-w-[1440px] px-8 py-10 2xl:mx-auto">
         <div className="mx-auto max-w-[26rem] space-y-10">
-          <form className="space-y-5">
+          <form
+            onSubmit={handleSubmit(handleContactForm)}
+            className="space-y-5"
+          >
             <h5 className="text-center font-lexend text-xl font-bold">
               Contato
             </h5>
             <div className="space-y-5">
               <div className="space-y-1.5">
                 <label htmlFor="name" className="block text-sm md:text-base">
-                  Nome
+                  Nome *
                 </label>
                 <input
                   type="text"
+                  {...register('name')}
                   id="name"
                   className="w-full rounded-md border border-neutral-100 px-5 py-2.5 text-sm shadow-default placeholder:text-neutral-700 md:text-base"
                   placeholder="Digite seu nome"
-                  required
                 />
+                {errors.name && (
+                  <span className="block text-xs text-primary">
+                    {errors.name.message}
+                  </span>
+                )}
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="name" className="block text-sm md:text-base">
-                  Email
+                <label htmlFor="email" className="block text-sm md:text-base">
+                  Email *
                 </label>
                 <input
-                  type="email"
+                  type="text"
+                  {...register('email')}
                   id="email"
                   className="w-full rounded-md border border-neutral-100 px-5 py-2.5 text-sm shadow-default placeholder:text-neutral-700 md:text-base"
                   placeholder="Digite o seu email"
-                  required
                 />
+                {errors.email && (
+                  <span className="block text-xs text-primary">
+                    {errors.email.message}
+                  </span>
+                )}
               </div>
               <div className="space-y-1.5">
                 <label htmlFor="subject" className="block text-sm md:text-base">
-                  Assunto
+                  Assunto *
                 </label>
                 <input
                   type="text"
                   id="subject"
+                  {...register('subject')}
                   className="w-full rounded-md border border-neutral-100 px-5 py-2.5 text-sm shadow-default placeholder:text-neutral-700 md:text-base"
-                  required
                 />
+                {errors.subject && (
+                  <span className="block text-xs text-primary">
+                    {errors.subject.message}
+                  </span>
+                )}
               </div>
               <div className="space-y-1.5">
                 <label htmlFor="message" className="block text-sm md:text-base">
-                  Mensagem
+                  Mensagem *
                 </label>
                 <textarea
                   id="message"
+                  {...register('message')}
                   className="h-[9.5rem] w-full resize-none rounded-md border border-neutral-100 px-5 py-2.5 text-sm shadow-default placeholder:text-neutral-700 md:text-base"
-                  required
                 />
+                {errors.message && (
+                  <span className="block text-xs text-primary">
+                    {errors.message.message}
+                  </span>
+                )}
               </div>
               <button
                 type="submit"
