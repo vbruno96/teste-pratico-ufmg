@@ -1,5 +1,5 @@
-import { lightFormat } from 'date-fns'
 import { FormEvent, useEffect, useState } from 'react'
+import { FaCircleExclamation } from 'react-icons/fa6'
 
 import { api } from '../lib/fakeApi'
 import { ExpandableEvent } from './expandable-event'
@@ -25,15 +25,23 @@ export function Events() {
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)
   const [hasFilter, setHasFilter] = useState(false)
+  const [filter, setFilter] = useState<{
+    eventType?: string
+    eventDate?: string
+  }>({})
+  const [filterNotFound, setFilterNotFound] = useState(false)
 
   function fetchEvents() {
-    const { events, totalPages } = api.getEvents()
-    setFilteredEvents(events)
+    const { events: data, totalPages } = api.getEvents()
+    setPage(1)
+    setFilteredEvents(data)
     setTotalPages(totalPages)
   }
 
   function loadMoreEvents(newPage: number) {
-    const { events } = api.getEvents(newPage)
+    const { events } = hasFilter
+      ? api.getEvents(newPage, filter.eventType, filter.eventDate)
+      : api.getEvents(newPage)
     setFilteredEvents((prevState) => [...prevState, ...events])
     setPage(newPage)
   }
@@ -44,25 +52,35 @@ export function Events() {
     const data = new FormData(event.currentTarget)
 
     const filters = {
-      eventDate: data.get('eventDate'),
-      eventType: data.get('eventType'),
+      eventDate:
+        data.get('eventDate') !== null
+          ? data.get('eventDate')?.toString()
+          : undefined,
+      eventType:
+        data.get('eventType') !== null
+          ? data.get('eventType')?.toString()
+          : undefined,
     }
 
     if (filters.eventDate || filters.eventType) {
-      const eventFilter = filteredEvents.filter(
-        (event) =>
-          event.tag === filters.eventType ||
-          lightFormat(event.date, 'yyyy-MM-dd') === filters.eventDate,
-      )
+      const eventFilter = api.getEvents(1, filters.eventType, filters.eventDate)
 
-      setFilteredEvents(eventFilter)
-      setHasFilter(true)
+      if (eventFilter.events.length > 0) {
+        setFilteredEvents(eventFilter.events)
+        setFilter(filters)
+        setHasFilter(true)
+        setPage(1)
+      } else {
+        setFilterNotFound(true)
+      }
     }
   }
 
   function handleResetEventFilter() {
     fetchEvents()
+    setFilter({})
     setHasFilter(false)
+    setFilterNotFound(false)
   }
 
   useEffect(() => {
@@ -96,7 +114,7 @@ export function Events() {
             <input
               type="date"
               name="eventDate"
-              className="w-full rounded-md border border-neutral-100 bg-white px-4 py-2 text-sm text-neutral-700 shadow-default md:text-base"
+              className="w-full appearance-none rounded-md border border-neutral-100 bg-white px-4 py-2 text-sm text-neutral-700 shadow-default md:text-base"
             />
           </div>
           <div className="flex justify-end gap-4">
@@ -117,10 +135,20 @@ export function Events() {
           </div>
         </form>
 
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+        <div className="relative grid grid-cols-1 gap-5 lg:grid-cols-2">
           {filteredEvents.map((event) => (
             <ExpandableEvent key={event.id} event={event} />
           ))}
+          {filterNotFound && (
+            <div className="absolute inset-0 flex items-center justify-center rounded-md border border-neutral-100 bg-white p-4 text-neutral-700 shadow-default">
+              <div className="space-y-5">
+                <FaCircleExclamation className="mx-auto size-12 text-primary" />
+                <span className="block text-center font-lexend font-semibold">
+                  Nenhum evento foi encontrado com o filtro informado!
+                </span>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="pt-5">
