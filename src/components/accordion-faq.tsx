@@ -2,7 +2,8 @@ import * as Accordion from '@radix-ui/react-accordion'
 import React, { useEffect, useState } from 'react'
 import { FaChevronDown } from 'react-icons/fa6'
 
-import { faqs as faqData } from '../store/faqs.json'
+import { faqs as faqData } from '../../store/db.json'
+import { api } from '../lib/fakeApi'
 
 interface FAQ {
   id: number
@@ -13,8 +14,23 @@ interface FAQ {
 export function AccordionFaq() {
   const [faqs, setFaqs] = useState<FAQ[]>([])
 
+  const [page, setPage] = useState(1)
+  const [totalPages, setTotalPages] = useState(1)
+
+  function fetchFaqs() {
+    const { faqs, totalPages } = api.getFaqs()
+    setFaqs(faqs)
+    setTotalPages(totalPages)
+  }
+
+  function loadMoreFaqs(newPage: number) {
+    const { faqs } = api.getFaqs(newPage)
+    setFaqs((prevState) => [...prevState, ...faqs])
+    setPage(newPage)
+  }
+
   useEffect(() => {
-    setFaqs(faqData)
+    fetchFaqs()
   }, [])
 
   return (
@@ -29,7 +45,9 @@ export function AccordionFaq() {
       </Accordion.Root>
       <button
         type="button"
-        className="mx-auto my-5 block w-full max-w-40 rounded bg-primary px-5 py-2.5 text-center text-sm text-neutral-50 md:max-w-[13.1875rem] md:text-base"
+        className="mx-auto my-5 block w-full max-w-40 rounded bg-primary px-5 py-2.5 text-center text-sm text-neutral-50 disabled:cursor-not-allowed disabled:opacity-75 md:max-w-[13.1875rem] md:text-base"
+        disabled={page === totalPages}
+        onClick={() => loadMoreFaqs(page + 1)}
       >
         Ver mais
       </button>
