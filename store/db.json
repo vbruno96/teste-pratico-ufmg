@@ -1,0 +1,81 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Conversa com Peter Pál Pelbart sobre criação e saúde mental",
+      "tag": "Roda de conversa",
+      "describe": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, debitis. Reiciendis fuga voluptatum quibusdam vel dolorum repellat eius quae ratione fugiat atque, temporibus, esse doloribus, labore possimus voluptatem. Enim aperiam velit at, iure labore earum laborum animi dolores",
+      "locale": {
+        "url": "https://ufmg.br",
+        "title": "Lorem ipsum dolor sit"
+      },
+      "img": {
+        "url": "https://placehold.co/600x400",
+        "title": "Image Placeholder"
+      },
+      "date": "2024-05-18T20:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "title": "Conferência de abertura com Jota Mombaça",
+      "tag": "Short caption",
+      "describe": "Nesta conferência, Jota Mombaça busca ativar uma leitura            não-individualizante do trauma da brasilidade, a fim de reforçar as bases para uma consideração das questões de saúde mental que não se limite à atomização proposta pelas analíticas do sujeito patologizado.",
+      "locale": {
+        "url": "https://ufmg.br",
+        "title": "Canal da Proex no Youtube"
+      },
+      "img": {
+        "url": "/img01.png",
+        "title": "Artista Jota Mombaça"
+      },
+      "date": "2024-05-12T22:30:00.000Z"
+    },
+    {
+      "id": 3,
+      "title": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      "tag": "Roda de conversa",
+      "describe": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, debitis. Reiciendis fuga voluptatum quibusdam vel dolorum repellat eius quae ratione fugiat atque, temporibus, esse doloribus, labore possimus voluptatem. Enim aperiam velit at, iure labore earum laborum animi dolores",
+      "locale": {
+        "url": "https://ufmg.br",
+        "title": "Lorem ipsum dolor sit"
+      },
+      "img": {
+        "url": "https://placehold.co/600x400",
+        "title": "Image Placeholder"
+      },
+      "date": "2024-05-10T17:00:00.000Z"
+    }
+  ],
+  "faqs": [
+    {
+      "id": 1,
+      "question": "Quando acontece a XI Semana da Saúde Mental e Inclusão Social?",
+      "anwser": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, provident voluptatem. Facere, non laborum. Quibusdam eligendi cupiditate cumque nulla officia recusandae? Placeat excepturi molestiae mollitia veritatis quaerat inventore impedit accusamus quo tenetur, dicta alias esse illo reiciendis. Harum dolorem necessitatibus, sequi vel magnam doloribus reiciendis maxime porro?"
+    },
+    {
+      "id": 2,
+      "question": "O que é a semana da Saúde Mental e Inclusão Social?",
+      "anwser": "O evento é uma promoção da Rede de Saúde Mental da UFMG e conta coma colaboração e parceria de representantes de movimentos sociais,usuários dos serviços públicos de saúde mental, Comissão Permanentede Saúde Mental da UFMG e outras instâncias internas e externas àcomunidade acadêmica."
+    },
+    {
+      "id": 3,
+      "question": "Qual é a programação?",
+      "anwser": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, provident voluptatem. Facere, non laborum. Quibusdam eligendi cupiditate cumque nulla officia recusandae? Placeat excepturi molestiae mollitia veritatis quaerat inventore impedit accusamus quo tenetur, dicta alias esse illo reiciendis. Harum dolorem necessitatibus, sequi vel magnam doloribus reiciendis maxime porro?"
+    },
+    {
+      "id": 4,
+      "question": "A programação é gratuita?",
+      "anwser": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, provident voluptatem. Facere, non laborum. Quibusdam eligendi cupiditate cumque nulla officia recusandae? Placeat excepturi molestiae mollitia veritatis quaerat inventore impedit accusamus quo tenetur, dicta alias esse illo reiciendis. Harum dolorem necessitatibus, sequi vel magnam doloribus reiciendis maxime porro?"
+    },
+    {
+      "id": 5,
+      "question": "Harum dolorem necessitatibus?",
+      "anwser": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, provident voluptatem. Facere, non laborum. Quibusdam eligendi cupiditate cumque nulla officia recusandae? Placeat excepturi molestiae mollitia veritatis quaerat inventore impedit accusamus quo tenetur, dicta alias esse illo reiciendis. Harum dolorem necessitatibus, sequi vel magnam doloribus reiciendis maxime porro?"
+    },
+    {
+      "id": 6,
+      "question": "Quibusdam eligendi cupiditate cumque nulla officia recusandae?",
+      "anwser": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, provident voluptatem. Facere, non laborum. Quibusdam eligendi cupiditate cumque nulla officia recusandae? Placeat excepturi molestiae mollitia veritatis quaerat inventore impedit accusamus quo tenetur, dicta alias esse illo reiciendis. Harum dolorem necessitatibus, sequi vel magnam doloribus reiciendis maxime porro?"
+    }
+  ]
+}
