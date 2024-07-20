@@ -110,7 +110,7 @@ export function Footer() {
               </div>
               <button
                 type="submit"
-                className="w-full rounded-md bg-primary px-5 py-2.5 text-sm text-white md:text-base"
+                className="w-full rounded-md bg-primary px-5 py-2.5 text-sm text-white transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-primary hover:ring-1 hover:ring-primary md:text-base"
               >
                 Enviar
               </button>

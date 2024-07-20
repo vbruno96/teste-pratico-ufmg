@@ -44,7 +44,7 @@ export function AccordionFaq() {
       </Accordion.Root>
       <button
         type="button"
-        className="mx-auto my-5 block w-full max-w-40 rounded bg-primary px-5 py-2.5 text-center text-sm text-neutral-50 disabled:cursor-not-allowed disabled:opacity-75 md:max-w-[13.1875rem] md:text-base"
+        className="mx-auto my-5 block w-full max-w-40 rounded bg-primary px-5 py-2.5 text-center text-sm text-neutral-50 transition-colors duration-300 ease-in-out disabled:cursor-not-allowed disabled:opacity-75 md:max-w-[13.1875rem] md:text-base [&:not([disabled])]:hover:bg-transparent [&:not([disabled])]:hover:text-primary [&:not([disabled])]:hover:ring-1 [&:not([disabled])]:hover:ring-primary"
         disabled={page === totalPages}
         onClick={() => loadMoreFaqs(page + 1)}
       >

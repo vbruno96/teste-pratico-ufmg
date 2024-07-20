@@ -29,11 +29,21 @@ export function Header() {
       <nav className="bg-neutral-100">
         <div className="max-w-[1440px] p-5 md:px-10 xl:px-40 2xl:mx-auto">
           <ul className="flex items-center border-neutral-700 text-xs lg:text-base [&>*:first-child]:pr-2 md:[&>*:first-child]:pr-6 lg:[&>*:first-child]:pr-12 [&>*:not(:first-child)]:px-2 md:[&>*:not(:first-child)]:px-6 lg:[&>*:not(:first-child)]:px-12 [&>*]:border-r">
-            <li className="uppercase text-neutral-700">Option</li>
-            <li className="font-bold uppercase text-primary">Option</li>
-            <li className="uppercase text-neutral-700">Option</li>
-            <li className="uppercase text-neutral-700">Option</li>
-            <li className="uppercase text-neutral-700">Option</li>
+            <li className="uppercase text-neutral-700">
+              <a href="#">Option</a>
+            </li>
+            <li className="font-bold uppercase text-primary">
+              <a href="#">Option</a>
+            </li>
+            <li className="uppercase text-neutral-700">
+              <a href="#">Option</a>
+            </li>
+            <li className="uppercase text-neutral-700">
+              <a href="#">Option</a>
+            </li>
+            <li className="uppercase text-neutral-700">
+              <a href="#">Option</a>
+            </li>
           </ul>
         </div>
       </nav>

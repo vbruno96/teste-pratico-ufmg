@@ -66,7 +66,7 @@ export function ExpandableEvent({ event }: ExpandableEventProps) {
         <Collapsible.Trigger asChild>
           <button
             type="button"
-            className="flex items-center gap-1.5 rounded bg-primary px-5 py-2.5 text-xs font-semibold text-neutral-50 md:text-sm"
+            className="flex items-center gap-1.5 rounded bg-primary px-5 py-2.5 text-xs font-semibold text-neutral-50 transition-colors duration-300 ease-in-out hover:bg-transparent hover:text-primary hover:ring-1 hover:ring-primary md:text-sm"
           >
             {!isExpanded ? (
               <>
