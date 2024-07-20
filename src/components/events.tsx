@@ -1,4 +1,4 @@
-import { lightFormat, set } from 'date-fns'
+import { lightFormat } from 'date-fns'
 import { FormEvent, useEffect, useState } from 'react'
 
 import { api } from '../lib/fakeApi'
