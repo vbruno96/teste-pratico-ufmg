@@ -102,14 +102,14 @@ export function Events() {
           <div className="flex justify-end gap-4">
             <button
               type="submit"
-              className="block rounded border-neutral-700 bg-neutral-100 px-5 py-2 text-xs font-semibold ring-[0.2px] ring-neutral-700 md:text-sm"
+              className="block rounded border-neutral-700 bg-neutral-100 px-5 py-2 text-xs font-semibold ring-[0.2px] ring-neutral-700 transition-colors duration-300 ease-in-out hover:bg-transparent md:text-sm"
             >
               Filtrar
             </button>
             {hasFilter && (
               <button
                 type="reset"
-                className="block rounded border-neutral-700 bg-neutral-100 px-5 py-2 text-xs font-semibold ring-[0.2px] ring-neutral-700 md:text-sm"
+                className="block rounded border-neutral-700 bg-neutral-100 px-5 py-2 text-xs font-semibold ring-[0.2px] ring-neutral-700 transition-colors duration-300 ease-in-out hover:bg-transparent md:text-sm"
               >
                 Limpar
               </button>
