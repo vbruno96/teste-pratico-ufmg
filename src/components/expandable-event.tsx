@@ -17,7 +17,7 @@ export function ExpandableEvent({ event }: ExpandableEventProps) {
     <Collapsible.Root
       open={isExpanded}
       onOpenChange={setIsExpanded}
-      className={`flex shrink grow basis-[27.25rem] gap-6 overflow-hidden rounded-md border border-neutral-100 px-5 py-6 text-neutral-700 shadow-default ${!isExpanded ? 'items-center' : 'items-start'}`}
+      className={`col-[span 1] flex gap-6 overflow-hidden rounded-md border border-neutral-100 px-5 py-6 text-neutral-700 shadow-default ${!isExpanded ? 'items-center' : 'items-start'}`}
     >
       <div className="font-lexend">
         <span className="block text-2xl font-bold">
